@@ -53,16 +53,17 @@ gulp.task('scripts', function() {
 
 // Responsive Images
 gulp.task('img-responsive', async function() {
-	return gulp.src('app/img/_src/**/*.{png,jpg,jpeg,webp,raw}')
-		.pipe(newer('app/img/@1x'))
+	return gulp.src('app/img/**/*.{png,jpg,jpeg,webp,raw}')
+		.pipe(newer('app/img/'))
 		.pipe(responsive({
 			'*': [{
 				// Produce @2x images
 				width: '100%', quality: 90, rename: { prefix: '@2x/', },
-			}, {
-				// Produce @1x images
-				width: '50%', quality: 90, rename: { prefix: '@1x/', }
-			}]
+			}, 
+			// {
+			// 	// Produce @1x images
+			// 	width: '50%', quality: 90, rename: { prefix: '@1x/', }
+			]
 		})).on('error', function () { console.log('No matching images found') })
 		.pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
 		.pipe(gulp.dest('app/img'))
@@ -142,5 +143,5 @@ gulp.task('prebuild', async function() {
 
 
 gulp.task('default', gulp.parallel('styles', 'scripts', 'browser-sync', 'watch'));
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'styles', 'scripts'));
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'styles', 'scripts'));
 // gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'sass', 'scripts'));
