@@ -103,17 +103,31 @@ input[type="radio"].visually-hidden
 	margin: 0 auto
 	position: relative
 	background-color: #ffffff
-	background-image: url(../img/bg-mob-wide.jpg)
+	// background-image: url(../img/bg-mob-wide.jpg)
 	background-repeat: no-repeat
 	background-position: top center
 	@media screen and ($tablet)
-		background-image: url(../img/bg-tabl.jpg)
+		// background-image: url(../img/bg-tabl.jpg)
 		max-width: 1200px
 		min-height: 620px
 	@media screen and ($desktop)
-		background-image: url(../img/bg2.jpg)
+		// background-image: url(../img/bg2.jpg)
 		max-width: 1920px
 		background-position: center center
+
+.no-webp .page-header
+	background-image: url(../img/bg-mob-wide.jpg)
+	@media screen and ($tablet)
+		background-image: url(../img/bg-tabl.jpg)
+	@media screen and ($desktop)
+		background-image: url(../img/bg2.jpg)
+
+.webp .page-header
+	background-image: url(../img/bg-mob-wide.webp)
+	@media screen and ($tablet)
+		background-image: url(../img/bg-tabl.webp)
+	@media screen and ($desktop)
+		background-image: url(../img/bg2.webp)
 
 	&::after
 		content: ""
@@ -271,7 +285,10 @@ input[type="radio"].visually-hidden
 	padding-top: 9px
 	color: #ffffff
 	p
-			margin: 0
+		margin: 0
+	a
+		color: #ffffff
+
 	
 	&:after
 		content: "Тюмень"
@@ -458,7 +475,7 @@ section
 
 .detailed-block
 	position: absolute
-	background-image: url(../img/btn-wrap.jpg)
+	// background-image: url(../img/btn-wrap.jpg)
 	background-repeat: no-repeat
 	background-position: (top, center)
 	width: 445px
@@ -468,15 +485,20 @@ section
 	display: flex
 	justify-content: center
 	align-items: center
-	@media screen and ($tablet)
+	@media screen and ($tablet) 
 		position: static
+	@media screen and ($tablet) and ($maxDesktop)
 		background-image: none
-	@media screen and ($desktop)
-		background-image: url(../img/btn-wrap.jpg)
+		
 	.btn
-	
 		@media screen and ($tablet)
-		box-shadow: 10px 10px 10px rgba(214, 214, 214, 0.5)
+			box-shadow: 10px 10px 10px rgba(214, 214, 214, 0.5)
+
+.no-webp .detailed-block
+	background-image: url(../img/btn-wrap.jpg)
+
+.webp .detailed-block
+	background-image: url(../img/btn-wrap.webp)
 			
 
 .we-numbers
@@ -586,23 +608,41 @@ section
 			top: 50%
 			transform: translateY(-50%)
 
-.item1
+.no-webp .item1
 	background-image: url(../img/service1.jpg)
 
-.item2
+.webp .item1
+	background-image: url(../img/service1.webp)
+
+.no-webp .item2
 	background-image: url(../img/service2.jpg)
 
-.item3
+.webp .item2
+	background-image: url(../img/service2.webp)
+
+.no-webp .item3
 	background-image: url(../img/service3.jpg)
 
-.item4
+.webp .item3
+	background-image: url(../img/service3.webp)
+
+.no-webp .item4
 	background-image: url(../img/service4.jpg)
 
-.item5
+.webp .item4
+	background-image: url(../img/service4.webp)
+
+.no-webp .item5
 	background-image: url(../img/service5.jpg)
 
-.item6
+.webp .item5
+	background-image: url(../img/service5.webp)
+
+.no-webp .item6
 	background-image: url(../img/service6.jpg)
+
+.webp .item6
+	background-image: url(../img/service6.webp)
 
 .services 
 	text-align: center
@@ -846,19 +886,18 @@ section
 		text-align: left
 
 .map
-	iframe
-		width: 290px
-		height: 226px
-		@media screen and ($tablet)
-			width: 354px
-			height: 276px
-		@media screen and ($desktop)
-			width: 445px
-			height: 347px
+	width: 290px
+	height: 226px
+	@media screen and ($tablet)
+		width: 354px
+		height: 276px
+	@media screen and ($desktop)
+		width: 445px
+		height: 347px
 	@media screen and ($tablet)
 		order: 1
 		margin-right: 88px
-		padding-top: 10px
+		margin-top: 10px
 		@media screen and ($desktop)
 			margin-right: 132px
 	

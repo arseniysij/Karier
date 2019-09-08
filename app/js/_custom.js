@@ -14,6 +14,17 @@ modalClose.addEventListener("click", function(e){
 	modalMenu.classList.remove("active");
 });
 
+
+  Modernizr.on('webp', function (result) {
+    if (result) {
+      // supported
+    } else {
+      // not-supported
+    }
+  });
+
+
+
 });
 
 
