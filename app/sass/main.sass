@@ -1,11 +1,12 @@
 @import vars
 @import fonts
 @import libs
-@include font('FuturaDemic', normal, 400, '../fonts/futurademic.woff2')
-@include font('FuturaBook', normal, 400, '../fonts/FuturaBook.woff')
-@include font('FuturaBookItalic', normal, 400, '../fonts/FuturaBook-Italic.woff2')
-@include font('FuturaLight', normal, 400, '../fonts/FuturaLight.woff')
-@include font('FuturaMedium', normal, 400, '../fonts/FuturaMedium.woff')
+@include font('FuturaDemic', normal, 400, '../fonts/futurademic.woff2', "woff2")
+@include font('FuturaDemic', normal, 400, '../fonts/futurademic.woff', "woff")
+@include font('FuturaBook', normal, 400, '../fonts/FuturaBook.woff', "woff")
+@include font('FuturaBookItalic', normal, 400, '../fonts/FuturaBook-Italic.woff', "woff")
+@include font('FuturaLight', normal, 400, '../fonts/FuturaLight.woff', "woff")
+@include font('FuturaMedium', normal, 400, '../fonts/FuturaMedium.woff', "woff")
 
 ::placeholder
 	color: #666
@@ -200,6 +201,9 @@ input[type="radio"].visually-hidden
 		line-height: 47px
 	@media screen and ($tablet)
 		padding-top: 120px
+
+.main-page-title
+	
 
 .page-title-descr
 	color: #ffffff
