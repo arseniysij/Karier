@@ -10,12 +10,13 @@
 // 900 Extra Black or Fat or Ultra Black
 
 
-@mixin font($f-name, $f-style, $f-weight, $f-url)
+@mixin font($f-name, $f-style, $f-weight, $f-url, $f-format)
 	@font-face
 		font-family: $f-name
 		font-style: $f-style
 		font-weight: $f-weight
-		src: url($f-url) format('woff2')
+		src: url($f-url) format('$f-format')
+		font-display: swap
 
 @mixin font($f-name, $f-style, $f-weight, $f-url)
 	@font-face
@@ -23,11 +24,12 @@
 		font-style: $f-style
 		font-weight: $f-weight
 		src: url($f-url) format('woff2')
+		font-display: swap
 
-@include font('FuturaDemic', normal, 400, '../fonts/futurademic.woff2')
-@include font('FuturaBook', normal, 400, '../fonts/FuturaBook.woff')
-@include font('FuturaBookItalic', normal, 400, '../fonts/FuturaBook-Italic.woff2')
-@include font('FuturaLight', normal, 400, '../fonts/FuturaLight.woff')
-@include font('FuturaMedium', normal, 400, '../fonts/FuturaMedium.woff')
+@include font('FuturaDemic', normal, 400, '../fonts/futurademic.woff2', woff2)
+@include font('FuturaBook', normal, 400, '../fonts/FuturaBook.woff', woff)
+@include font('FuturaBookItalic', normal, 400, '../fonts/FuturaBook-Italic.woff2', woff2)
+@include font('FuturaLight', normal, 400, '../fonts/FuturaLight.woff', woff2)
+@include font('FuturaMedium', normal, 400, '../fonts/FuturaMedium.woff', woff2)
 
 
