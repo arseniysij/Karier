@@ -10,6 +10,7 @@ var gulp         = require('gulp'),
 		rename       = require('gulp-rename'),
 		responsive   = require('gulp-responsive'),
 		del          = require('del');
+		webp 				 = require('gulp-webp');
 
 // Local Server
 gulp.task('browser-sync', function() {
@@ -73,6 +74,16 @@ gulp.task('img', gulp.series('img-responsive', bsReload));
 // Clean @*x IMG's
 gulp.task('cleanimg', function() {
 	return del(['app/img/@*'], { force: true })
+});
+
+gulp.task('webp', async function(){
+	gulp.src('app/img/source/*.jpg')
+		.pipe(webp({
+			'*': [{
+				quality: 90
+			}]
+		}))
+		.pipe(gulp.dest('app/img'))
 });
 
 // Code & Reload

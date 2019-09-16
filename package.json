@@ -23,6 +23,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify-es": "^1.0.4",
     "gulp-uglifyjs": "^0.6.2",
+    "gulp-webp": "^4.0.1",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0"
   }

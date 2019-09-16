@@ -87,6 +87,7 @@ input[type="radio"].visually-hidden
 	vertical-align: middle
 	&:hover, &:focus, &:active
 		background-color: $text
+		color: #ffffff
 	
 .btn-red
 	background-color: $red
@@ -130,16 +131,6 @@ input[type="radio"].visually-hidden
 	@media screen and ($desktop)
 		background-image: url(../img/bg2.webp)
 
-	&::after
-		content: ""
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		background-color: #000000
-		opacity: 0.5
-		z-index: 1
 
 .page-header-wrapper
 	width: 320px
@@ -558,8 +549,8 @@ section
 			padding: 0 140px
 
 .services-item
+	display: block
 	position: relative
-	z-index: 3
 	width: 255px
 	height: 150px
 	margin-bottom: 40px
@@ -575,42 +566,18 @@ section
 			margin-right: 0
 
 
-.services-img-wrap
-	position: relative
+.img-text
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 100%
+	font-family: FuturaDemic
+	margin: 0
+	font-size: 18px
+	color: #ffffff
 
-	width: 255px
-	height: 150px
-	&::before
-		content: ""
-		position: absolute
-		top: 0
-		right: 0
-		bottom: 0
-		left: 0
-		background-color: #000000
-		opacity: 0.5
-		z-index: 1
 
-	.img-text
-		position: absolute
-		width: 100%
-		height: 100%
-		font-family: FuturaDemic
-		font-size: 18px
-		color: #ffffff
-		
-		z-index: 3
-		text-align: center
-		vertical-align: center
-
-		p
-			position: absolute
-			width: 100%
-			margin: 0
-			text-align: center
-			vertical-align: center
-			top: 50%
-			transform: translateY(-50%)
 
 .no-webp .item1
 	background-image: url(../img/service1.jpg)
